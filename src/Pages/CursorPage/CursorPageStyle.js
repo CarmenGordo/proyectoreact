@@ -3,13 +3,15 @@ import styled from "styled-components";
 
 const PageCursorContainer = styled.section`
     width: 100%;
-    min-height: 900px;
+    height: 900px;
+    min-height: 950px;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .h1{
-        font-family: 'schwifty';
-        font-size: 60px;
-        color: red;
+    .img-cabecera{
+        max-height: 600px;
     }
 `;
 
