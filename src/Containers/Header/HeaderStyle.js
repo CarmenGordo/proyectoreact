@@ -10,9 +10,15 @@ const HeaderContainer = styled.header`
     align-items: center;
     border-bottom: solid 1px black;
     color: white;
-    a{
+
+    .link-nav{
+        color: #13ADC4;
+        font-size: 26px;
         margin-left: 15px;
-        color: red;
+
+        &:hover{
+            -webkit-text-stroke: 0.5px #F8F641;
+        }
     }
 `;
 
