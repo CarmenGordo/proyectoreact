@@ -11,13 +11,27 @@ const HeaderContainer = styled.header`
     border-bottom: solid 1px black;
     color: white;
 
+    .button-theme{
+
+    }
+
+    @media screen and (max-width: 900px) {
+        .link-nav{
+            font-weight: bold;
+            color: red;
+        }
+    }
+
     .link-nav{
-        color: #13ADC4;
         font-size: 26px;
-        margin-left: 15px;
+        color: #fff;
+        text-decoration: none;
+        margin-right: 15px;
 
         &:hover{
-            -webkit-text-stroke: 0.5px #F8F641;
+            font-weight: 500;
+            color: #13ADC4;
+            text-decoration: underline #13ADC4;
         }
     }
 `;
