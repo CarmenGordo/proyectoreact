@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CardsContainer = styled.div`
     width: 180px;
-    height: 223 px;
+    height: 220 px;
     background-color: red;
 
 `;

@@ -1,12 +1,12 @@
 import React from "react";
-// style
-import CardsContainer from "./Cards";
+import CardsContainer from "./CardsStyle";
+// link ?
 
-const Cards = () => {
+const Cards = ({children}) => {
     return(
-       <CardsContainer>
-           
-       </CardsContainer>
+        <CardsContainer>
+            {children}
+        </CardsContainer>
     )
 }
 
