@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // style
 import LogoContainer from "./LogoStyle";
 // assets img
-import logo from '../../Assets/Images/logo_pickle_rick.png';
+import logo from '../../Assets/Images/logo.png';
 
 
 const Logo = () => {

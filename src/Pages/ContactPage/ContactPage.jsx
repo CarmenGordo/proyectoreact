@@ -15,12 +15,8 @@ const ContactPage = () => {
                     text="Do you have any information about Evil Morty? Contact us"
                 />
 
-                {/* form */}
-                <Form>
+                <Form />
                     
-                </Form>
-
-
             </ContactPageContainer>
         </>
         

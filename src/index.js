@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
 import {
   BrowserRouter,
   Routes,
@@ -11,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 // pages
 import CursorPage from './Pages/CursorPage/CursorPage';
 import Home from './Pages/Home/index';
+import AboutUsPage from './Pages/AboutUsPage/AboutUsPage';
 import ContactPage from './Pages/ContactPage/ContactPage';
 
 
@@ -21,7 +21,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/cursor' element={<CursorPage />} />
-        {/* <Route path='/aboutus' element={<AboutusPage />} /> */}
+        <Route path='/aboutus' element={<AboutUsPage />} /> 
         <Route path='/contact' element={<ContactPage/>} />
       </Routes>
     </BrowserRouter>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CardsListContainer = styled.section`
-    background-color: blue;
+    // background-color: blue;
     
 
 

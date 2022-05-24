@@ -43,7 +43,8 @@ const FormContainer = styled.form`
     .submit{
         width: 100px;
         height: 80px;
-        background-image: "../../assets/images/logo_pickle_rick.png";
+        background-image: url(../../Assets/Images/logo.png);
+        // background-image: url("../../../Assets/Images/logo.png");
         // background-color: red;
         color: white;
         border:none;
