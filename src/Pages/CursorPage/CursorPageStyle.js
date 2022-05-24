@@ -9,10 +9,14 @@ const PageCursorContainer = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column nowrap;
 
     .img-cabecera{
         max-height: 600px;
+        opacity: 0.7;
     }
+
+   
 `;
 
 export default PageCursorContainer;

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
-    width: 100%;
-    max-height: 150px;
+    height: 90px;
+    max-height: 92px;
     padding: 5px 45px;
     background-color: black;
     display: flex;
@@ -11,13 +11,8 @@ const HeaderContainer = styled.header`
     border-bottom: solid 1px black;
     color: white;
 
-    .button-theme{
-
-    }
-
     @media screen and (max-width: 900px) {
         .link-nav{
-            font-weight: bold;
             color: red;
         }
     }
@@ -26,7 +21,7 @@ const HeaderContainer = styled.header`
         font-size: 26px;
         color: #fff;
         text-decoration: none;
-        margin-right: 15px;
+        margin-left: 15px;
 
         &:hover{
             font-weight: 500;

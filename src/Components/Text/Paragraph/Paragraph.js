@@ -2,10 +2,11 @@ import React from "react";
 import ParagContainer from "./ParagraphStyle";
 
 
-const Parag = ({color, text}) => {
+const Parag = ({color, text, className}) => {
     return(
         <ParagContainer
-            color={color}>
+            color={color}
+            className={className}>
                 {text}
         </ParagContainer>
     )

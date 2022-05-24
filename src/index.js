@@ -10,6 +10,8 @@ import {
 import reportWebVitals from './reportWebVitals';
 // pages
 import CursorPage from './Pages/CursorPage/CursorPage';
+import Home from './Pages/Home/index';
+import ContactPage from './Pages/ContactPage/ContactPage';
 
 
 
@@ -17,8 +19,10 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path='/cursorpage' element={<CursorPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path='/cursor' element={<CursorPage />} />
+        {/* <Route path='/aboutus' element={<AboutusPage />} /> */}
+        <Route path='/contact' element={<ContactPage/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

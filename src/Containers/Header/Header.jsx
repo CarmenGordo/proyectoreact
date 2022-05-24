@@ -4,11 +4,18 @@ import { Link } from "react-router-dom";
 import HeaderContainer from "./HeaderStyle";
 // asset img
 import Logo from '../../Components/Logo/Logo';
+// import { useContext } from "react";
 
 const Header = () =>{
+    // const themeValue = useContext(ThemeContext);
+
     return(
-        <HeaderContainer>
+        <HeaderContainer >
+            {/* para que pille el tema, su valor tiene que ser = al tema theme=themeValue.theme */}
             <Logo />
+
+            {/* button theme */}
+            <button></button>
 
             <nav>
                 <Link to="/" className="link-nav">Home</Link>
