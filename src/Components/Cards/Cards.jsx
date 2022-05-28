@@ -7,6 +7,7 @@ const Cards = ({src, name}) => {
     return(
         <CardsContainer>
             {/* <Link> */}
+            aaaaaa
                 <img 
                     className="img_character"
                     src={src} 
