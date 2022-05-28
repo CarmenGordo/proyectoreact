@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Shlop';
+    src: url('Shlop-Regular.woff2') format('woff2'),
+        url('Shlop-Regular.woff') format('woff'),
+        url('Shlop-Regular.svg#Shlop-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

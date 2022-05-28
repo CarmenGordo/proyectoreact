@@ -11,9 +11,10 @@ export const useTheme = () =>{
         setTheme(updateTheme)
     }
 
-    // 
+    // devuelve el tema y el onclick
     return{
         theme,
         handleTheme
     }
 }
+

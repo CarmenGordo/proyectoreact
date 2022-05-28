@@ -10,6 +10,7 @@ const ContactPageContainer = styled.section`
     
 
     .h1_text_cabecera{
+        font-family: 'Get Schwifty';
         font-size: 40px;
         color: #13ADC4;
         -webkit-text-stroke: 1px #F8F641;

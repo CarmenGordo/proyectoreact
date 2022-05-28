@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 // style
 import HomeContainer from "./HomeStyle";
 // components
@@ -9,6 +9,8 @@ import Section from "../../Containers/Section/Section";
 import useCharacter from "../../Services/characters-service";
 import CardsList from "../../Containers/CardsList/CardsList";
 
+//context
+import {ThemeContext} from '../../Context/ThemeContext';
 
 
 const Home = () => {
@@ -22,8 +24,11 @@ const Home = () => {
 
     console.log('principalCharacters', principalCharacters)
 
+    // tema 
+    const themeValue = useContext(ThemeContext);
+
     return(
-        <HomeContainer>
+        <HomeContainer theme={themeValue.theme}>
             {/* para que salga antes la pag de Cursorpage */}
             {/* {
                 !selecterCharcater ? (
@@ -35,7 +40,9 @@ const Home = () => {
             } */}
             {/* final pag Cursorpage */}
 
-            <Header />
+            <Header 
+                handleTheme={() => themeValue.handleTheme()}
+            />
 
             <Section>
                 {/* filtros y busqueda */}
