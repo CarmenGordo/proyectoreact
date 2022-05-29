@@ -45,13 +45,16 @@ const Home = () => {
             />
 
             <Section>
-                {/* filtros y busqueda */}
                 {/* Crear componente CardsList y Cards */}
-                {characters.map(character => (
-                    <CardsList>
-                        
-                    </CardsList>
-                ))}
+                <CardsList>
+                    {characters.map(character => (
+                        <Cards
+                            src={character.image}
+                            name={character.name}
+                            status={character.status}
+                        />
+                    ))}
+                </CardsList>
             </Section>
             {info?.next && <button onClick={handleNextCharacters}>Next</button>}
             {info?.prev && <button onClick={handlePrevCharacters}>Prev</button>}

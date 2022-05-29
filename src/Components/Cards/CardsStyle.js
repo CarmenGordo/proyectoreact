@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CardsContainer = styled.div`
-    width: 250px;
+      width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,14 +9,6 @@ const CardsContainer = styled.div`
     margin: 50px 15px;
     border-radius: 10px;
     text-align: center;
-
-
-    // props que cambia con tema
-    // comprobar stado de status para poner el color del borde
-    // border: solid 3px #13ADC4;
-    // padding: 8px;
-    // filter: drop-shadow(0px 4px 4px rgba(19, 173, 196, 0.5)) drop-shadow(0px -4px 10px rgba(19, 173, 196, 0.5));
-
 
 
     .img_character{
@@ -37,12 +29,19 @@ const CardsContainer = styled.div`
         text-align: center;
         color: black;
         font-size: 24px;
-
-        // comprobacion de estatus
-        list-style: {}
     }
 
+    // comprobacion de estatus
     
+    .dead{
+        color: red
+    }
+    .alive{
+        color: blue
+    }
+    .missing{
+        color: yellow
+    }
 
 `;
 

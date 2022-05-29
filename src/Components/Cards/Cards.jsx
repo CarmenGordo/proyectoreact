@@ -3,7 +3,7 @@ import CardsContainer from "./CardsStyle";
 // link ?
 import { Link } from "react-router-dom";
 
-const Cards = ({src, name}) => {
+const Cards = ({src, name, status}) => {
     return(
         <CardsContainer>
             {/* <Link> */}
@@ -15,18 +15,34 @@ const Cards = ({src, name}) => {
 
                 <div
                     className="info_character">
-                    {/* <h3>
-                        text="eee"
-                        text={name}
-                    </h3> */}
-
-                    <ul>
-                        <li>
-                            text="eee"
-                        </li>
-                    </ul>
-                        
                    
+                    {
+                        (() => {
+                        if (status === "Dead") {
+                            return (
+                            <li className="dead">
+                               
+                                {name}
+                            </li>
+                            );
+                        } else if (status === "Alive") {
+                            return (
+                            <li className="alive">
+                             
+                                {name}
+                            </li>
+                            );
+                        } else {
+                            return (
+                            <li
+                                className="missing"
+                            >
+                                {name}
+                            </li>
+                            );
+                        }
+                        })()
+                    }       
                 </div>
 
             {/* </Link> */}
