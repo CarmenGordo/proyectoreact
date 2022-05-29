@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useContext} from "react";
+import React, {useEffect, useState, useContext, useRef} from "react";
 // style
 import HomeContainer from "./HomeStyle";
 // components
@@ -9,8 +9,14 @@ import Section from "../../Containers/Section/Section";
 import useCharacter from "../../Services/characters-service";
 import CardsList from "../../Containers/CardsList/CardsList";
 
-//context
-import {ThemeContext} from '../../Context/ThemeContext';
+// Filters
+import Filters from "../../Components/Filters/filter";
+
+
+// Themes
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "../../Themes/globalStyleThemes";
+import { lightTheme, darkTheme } from "../../Themes/themes";
 
 
 const Home = () => {
@@ -24,11 +30,36 @@ const Home = () => {
 
     console.log('principalCharacters', principalCharacters)
 
-    // tema 
-    const themeValue = useContext(ThemeContext);
+    // const para modificar themes
+   const [theme, setTheme] = useState('light');
+
+
+    // filtros
+    let [gender, updateGender] = useState("");
+    let [species, updateSpecies] = useState("");
+
+
+
+
+    // buscador para que x defecto sea nullo y no pille na
+    const searchFilter = useRef(null);
+    // estado para buscador y actualizador listado character
+    const [characterList, setCharacterList] = useState([]);
+    const [searchCharacter, setSearchCharacter] = useState([]);
+
+    const handleSearch = () => {
+        const searchedValue = searchFilter.current.value.toLowerCase();
+        const filteredCharacter = characterList.filter(character => character.name.toLowerCase().includes(searchedValue));
+        setCharacterList(filteredCharacter);
+    }
+
 
     return(
-        <HomeContainer theme={themeValue.theme}>
+        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <>
+      <GlobalStyles/>
+      
+      <HomeContainer>
             {/* para que salga antes la pag de Cursorpage */}
             {/* {
                 !selecterCharcater ? (
@@ -40,9 +71,23 @@ const Home = () => {
             } */}
             {/* final pag Cursorpage */}
 
-            <Header 
-                handleTheme={() => themeValue.handleTheme()}
-            />
+            <Header />
+        
+
+            <Filters>
+
+            </Filters>
+
+
+            <div className="search">
+                <input 
+                    ref={searchFilter} 
+                    type="text" 
+                    placeholder="Character finder"
+                    onChange={(e) => handleSearch(e)}
+                />
+            </div>
+
 
             <Section>
                 {/* Crear componente CardsList y Cards */}
@@ -61,6 +106,9 @@ const Home = () => {
 
             
         </HomeContainer>
+      </>
+    </ThemeProvider>
+        
         
     )
 }

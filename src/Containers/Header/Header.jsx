@@ -1,29 +1,36 @@
-import React, {useContext} from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 // style
 import HeaderContainer from "./HeaderStyle";
 // asset img
 import Logo from '../../Components/Logo/Logo';
 import {ThemeContext} from '../../Context/ThemeContext';
-import SwitchButton from "../../Components/SwitchButton/SwitchButton";
+import { darkTheme, lightTheme } from "../../Themes/themes";
 
+const Header = () =>{
+    
+   // const para modificar themes
+   const [theme, setTheme] = useState('light');
 
-const Header = ({handleTheme}) =>{
-    const themeValue = useContext(ThemeContext);
-    // valor del tema
+   const handleTheme = () => {
+       localStorage.setItem("name", JSON.stringify(theme === 'light' ? JSON.stringify(darkTheme) : JSON.stringify(lightTheme)))
+       theme === 'light' ? setTheme('dark') : setTheme('light')
+   }
+
 
     return(
-        <HeaderContainer theme={themeValue.theme}>
+        <HeaderContainer>
             
             <Logo />
 
             {/* button theme */}
             {/* <SwitchButton></SwitchButton> */}
 
-            
+            <button onClick={handleTheme}>Switch Themeaaa</button>
+
 
             <nav>
-                <span onClick={() => handleTheme()}>Pasar a modo obscuro</span>
+            
                 <Link to="/" className="link-nav">Home</Link>
                 <Link to="/character" className="link-nav">Character</Link>
                 <Link to="/aboutus" className="link-nav">About us</Link>

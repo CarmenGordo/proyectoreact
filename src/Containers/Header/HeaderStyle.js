@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { lightTheme, darkTheme } from "../../Constants/Colors";
 
 const HeaderContainer = styled.header`
     height: 90px;
@@ -26,10 +25,8 @@ const HeaderContainer = styled.header`
 
         &:hover{
             font-weight: 500;
-            // color: #13ADC4;
+            color: #13ADC4;
             // text-decoration: underline #13ADC4;
-            color: ${(props) => props.theme === 'light' ? lightTheme.black : darkTheme.black}
-            // text-decoration: underline {(props) => props.theme === 'light' ? lightTheme.letters : darkTheme.letters};
         }
     }
 

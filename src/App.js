@@ -1,22 +1,31 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import GlobalStyle from './globalStyle';
 
 //Components
 import Header from './Containers/Header/Header';
 
-import { ThemeContext } from './Context/ThemeContext';
-import { useTheme } from './Hooks/useTheme';
+// Themes
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "./Themes/globalStyleThemes";
+import { lightTheme, darkTheme } from "./Themes/themes";
 
 function App() {
 
-  const theme = useTheme(); 
+  // const para modificar themes
+  const [theme, setTheme] = useState('light');
+  const handleTheme = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
+
 
   return (
     <>
-    <ThemeContext.Provider value={theme}>
-      <Header/>
-    </ThemeContext.Provider>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <>
+      <GlobalStyles/>
+      <button onClick={handleTheme}>Switch Theme</button>
+      </>
+    </ThemeProvider>
     </>
   );
 }
