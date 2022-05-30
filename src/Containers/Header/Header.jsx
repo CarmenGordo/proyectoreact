@@ -17,6 +17,13 @@ const Header = () =>{
        theme === 'light' ? setTheme('dark') : setTheme('light')
    }
 
+//    boton responsive
+   const [openResponsive, setOpenResponsive] = useState(false)
+
+   const handleOpenButton = () =>{
+    setOpenResponsive(!openResponsive)
+   }
+
 
     return(
         <HeaderContainer>
@@ -24,16 +31,19 @@ const Header = () =>{
             <Logo />
 
             {/* button theme */}
-            {/* <SwitchButton></SwitchButton> */}
-
             <button onClick={handleTheme}>Switch Themeaaa</button>
 
 
-            <nav>
-            
+            <nav className="normal">
                 <Link to="/" className="link-nav">Home</Link>
                 <Link to="/aboutus" className="link-nav">About us</Link>
                 <Link to="/contact" className="link-nav">Contact</Link>
+            </nav>
+
+
+            <button handleOpenButton={handleOpenButton}>menu</button>
+            <nav className="responsive">
+
             </nav>
 
         </HeaderContainer>

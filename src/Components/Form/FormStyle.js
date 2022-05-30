@@ -2,17 +2,21 @@ import styled from "styled-components";
 
 const FormContainer = styled.form`
   
-    display: flex;
+  display: flex;
     justify-content: center;
-    align-item: center;
+    align-items: center;
     flex-flow: row wrap;
     padding-top: 26px;
 
     div{
         display: flex;
         justify-content: center;
-        align-item: center;
+        align-items: flex-start;
         flex-flow: column wrap;
+    }
+
+    label{
+        font-size: 20px;
     }
 
     input{
@@ -37,19 +41,42 @@ const FormContainer = styled.form`
 
     input::placeholder, textarea::placeholder{
         color: white;
+        padding-left: 10px;
+    }
+    textarea::placeholder{
+        padding-top: 15px;
     }
 
+    input:focus, textarea:focus{
+        border: none;
+        filter: drop-shadow(0 0 8px #13ADC4);
+    }
 
     .submit{
         width: 100px;
         height: 80px;
         background-image: url(../../Assets/Images/logo.png);
         // background-image: url("../../../Assets/Images/logo.png");
-        // background-color: red;
         color: white;
         border:none;
-        
+
+        &:focus{
+            filter: none;
+        }
     }
+
+    @media screen and (max-width: 900px) {
+        input, textarea{
+            width: 450px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        input, textarea{
+            width: 340px;
+        }
+    }
+
 
 `;
 

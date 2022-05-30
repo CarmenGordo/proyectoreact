@@ -20,7 +20,7 @@ const Form = (name, surname, classForm) => {
         <FormContainer>
             <form>
                 <div>
-                    <label htmlFor="">Name</label>
+                    <label htmlFor="">Tell us your name:</label>
                     <input 
                         type="text"
                         className={classForm}
@@ -32,7 +32,7 @@ const Form = (name, surname, classForm) => {
                 </div>
                 
                 <div>
-                    <label htmlFor="">Email</label>
+                    <label htmlFor="">And your Netflix account..., sorry your e-mail:</label>
                     <input 
                         type="text"
                         className={classForm}
@@ -44,7 +44,7 @@ const Form = (name, surname, classForm) => {
                 </div>
 
                 <div>
-                    <label htmlFor="">Please write the message</label>
+                    <label htmlFor="">What do you think about pirates of the pancreas?:</label>
                     <textarea
                         className={classForm}
                         placeholder= "Message"

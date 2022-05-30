@@ -44,22 +44,38 @@ const CardsContainer = styled.div`
     // comprobacion de estatus
     .principal{
         border-radius: 10px;
-        filter: drop-shadow(0 0 15px #13ADC4);
+        border: solid 2px #13ADC4;
+        
+        &:hover{
+            filter: drop-shadow(0 0 15px #13ADC4);
+        }
     }
 
     .dead{
        border-radius: 10px;
-       filter: drop-shadow(0 0 15px #E4425A);
+       border: solid 2px #E4425A;
+       
+       &:hover{
+        filter: drop-shadow(0 0 15px #E4425A);
+       }
     }
 
     .alive{
        border-radius: 10px;
-       filter: drop-shadow(0 0 15px #81D145);
+       border: solid 2px #81D145;
+
+       &:hover{
+        filter: drop-shadow(0 0 15px #81D145);
+       }
     }
 
     .missing{
-        border-radius: 10px;
-       filter: drop-shadow(0 0 15px #F8F641);
+       border-radius: 10px;
+       border: solid 2px #F8F641;
+
+       &:hover{
+        filter: drop-shadow(0 0 15px #F8F641);
+       }
     }
 
 `;

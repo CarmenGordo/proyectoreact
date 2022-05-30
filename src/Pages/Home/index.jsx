@@ -9,6 +9,8 @@ import Section from "../../Containers/Section/Section";
 import useCharacter from "../../Services/characters-service";
 import CardsList from "../../Containers/CardsList/CardsList";
 
+import { Link } from "react-router-dom";
+
 // Filters
 import Filters from "../../Components/Filters/filter";
 
@@ -73,16 +75,19 @@ const Home = () => {
 
 
             <Section>
-                {/* Crear componente CardsList y Cards */}
+                
                 <CardsList>
                     {characters.map(character => (
-                        <Cards
+                        // <Link to={`../CharacterPage/CharacterPageDetails/${character.id}`}>
+                            <Cards
                             id={character.id}
                             src={character.image}
                             name={character.name}
                             status={character.status}
                             origin={character.origin.name}
                         />
+                        // </Link>
+                        
                     ))}
                 </CardsList>
             </Section>
