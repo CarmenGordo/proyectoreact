@@ -38,6 +38,7 @@ const CardsContainer = styled.div`
         h3{
             font-family: 'Shlop';
             font-size: 30px;
+            color: black;
         }
     }
 
@@ -56,7 +57,7 @@ const CardsContainer = styled.div`
        border: solid 2px #E4425A;
        
        &:hover{
-        filter: drop-shadow(0 0 15px #E4425A);
+           filter: drop-shadow(0 0 15px #E4425A);
        }
     }
 
@@ -65,7 +66,7 @@ const CardsContainer = styled.div`
        border: solid 2px #81D145;
 
        &:hover{
-        filter: drop-shadow(0 0 15px #81D145);
+           filter: drop-shadow(0 0 15px #81D145);
        }
     }
 
@@ -74,7 +75,7 @@ const CardsContainer = styled.div`
        border: solid 2px #F8F641;
 
        &:hover{
-        filter: drop-shadow(0 0 15px #F8F641);
+           filter: drop-shadow(0 0 15px #F8F641);
        }
     }
 

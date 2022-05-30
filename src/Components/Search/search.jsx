@@ -1,15 +1,11 @@
 import React from "react";
 
-const Search = ({handleCharacterSearch}) => {
-    return(
-        <div className="search">
-                <input  
-                    type="text" 
-                    placeholder="Character finder"
-                    onChange={handleCharacterSearch}
-                />
-        </div>
+const CharactersFilter = ({ handleCharacterFilter }) => {
+    return (
+      <div>
+        <input onChange={handleCharacterFilter} placeholder="Character finder"/>
+      </div>
     )
-}
+  }
 
-export default Search;
+export default CharactersFilter;

@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 const FormContainer = styled.form`
-  
-  display: flex;
+
+    font-family: 'Radio Canada';
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
     padding-top: 26px;
+    
 
     div{
         display: flex;
@@ -16,7 +18,8 @@ const FormContainer = styled.form`
     }
 
     label{
-        font-size: 20px;
+        font-size: 22px;
+        color: white;
     }
 
     input{
@@ -31,7 +34,7 @@ const FormContainer = styled.form`
 
     textarea{
         width: 550px;
-        min-height: 60px;
+        min-height: 100px;
         border: none;
         border-radius: 5px;
         background-color: #C4C4C4;
@@ -40,6 +43,7 @@ const FormContainer = styled.form`
     }
 
     input::placeholder, textarea::placeholder{
+        font-family: 'Radio Canada';
         color: white;
         padding-left: 10px;
     }
@@ -48,15 +52,19 @@ const FormContainer = styled.form`
     }
 
     input:focus, textarea:focus{
+        font-family: 'Radio Canada';
         border: none;
         filter: drop-shadow(0 0 8px #13ADC4);
     }
 
     .submit{
-        width: 100px;
-        height: 80px;
-        background-image: url(../../Assets/Images/logo.png);
-        // background-image: url("../../../Assets/Images/logo.png");
+        /* background-image: url(${require(`../../Assets/Images/logo.png`)});
+        background-size: cover;
+        background-position-y: 10px; */
+        background-color: #13ADC4;
+        font-family: 'Radio Canada';
+        width: 80px;
+        height: 60px;
         color: white;
         border:none;
 
@@ -69,11 +77,19 @@ const FormContainer = styled.form`
         input, textarea{
             width: 450px;
         }
+       
     }
 
     @media screen and (max-width: 500px) {
+        /* text-align: center; */
         input, textarea{
-            width: 340px;
+            width: 400px;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        input, textarea{
+            width: 300px;
         }
     }
 

@@ -9,8 +9,7 @@ const useCharacter = (url) => {
     // para sacr los 5 characterprincipales
     const [principalCharacters, setPrincipalCharacters] = useState([])
     // character recargados para buscador
-    const [charactersSearch, setCharactersSearch] = useState([])
-
+    const [charactersFilter, setCharactersFilter] = useState([])
 
     const getCharacters = async () => {
         try{
@@ -25,9 +24,9 @@ const useCharacter = (url) => {
     }
 
     // para buscador
-    const handleCharacterSearch = (event) => {
-        setCharactersSearch(
-            loadingCharacter.filter(character =>
+    const handleCharacterFilter = (event) => {
+        setCharactersFilter(
+            data.filter(character =>
             character.name.toLowerCase().search(event.target.value.toLowerCase().trim()) >= 0
           )
         )
@@ -50,7 +49,7 @@ const useCharacter = (url) => {
             setPrincipalCharacters([
                 data.results.slice(0, 5)
             ])
-            setCharactersSearch(data)
+            setCharactersFilter(data)
             setData(data)
         })
     }, [])
@@ -62,7 +61,7 @@ const useCharacter = (url) => {
         info: data.info,
         charactersSearch: data,
         // buscador
-        handleCharacterSearch,
+        handleCharacterFilter,
         // paginacion
         handleNextCharacters,
         handlePrevCharacters

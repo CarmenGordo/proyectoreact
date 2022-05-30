@@ -53,12 +53,14 @@ const Form = (name, surname, classForm) => {
                     />
                 </div>
 
-                <input
-                    className="submit"
-                    type="submit"
-                    value="Send"
-                    onClick={showForm}
-                />
+                <div className="button_submit">
+                    <input
+                        className="submit"
+                        type="submit"
+                        value="Send"
+                        onClick={showForm}
+                    />
+                </div>
 
             </form>
 

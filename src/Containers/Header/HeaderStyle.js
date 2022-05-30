@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
+
+    font-family: 'Radio Canada';
     height: 90px;
     max-height: 92px;
     padding: 5px 45px;
@@ -39,7 +41,7 @@ const HeaderContainer = styled.header`
         }
     }
 
-    .responsive{
+    /* .responsive{
         display: none;
         background-color: red;
         width: 40px;
@@ -53,8 +55,8 @@ const HeaderContainer = styled.header`
         align-items: center;
         position: fixed;
         top: 10vh;
-        /* 0 se ve, -100% no se ve */
-        right: ${props => (props.openResponsive ? "0" : "-100%")};
+        0 se ve, -100% no se ve
+        right: {props => (props.openResponsive ? "0" : "-100%")};
         transition: right 0.3s linear;
 
         @media only screen and (min-width: 624px) {
@@ -63,9 +65,9 @@ const HeaderContainer = styled.header`
             height: auto;
             justify-content: center;
             background: white;
-        }
-        
+        } 
     }
+    */
 
 
 `;

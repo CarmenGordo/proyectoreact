@@ -31,15 +31,13 @@ const Header = () =>{
             <Logo />
 
             {/* button theme */}
-            <button onClick={handleTheme}>Switch Themeaaa</button>
-
+            {/* <button onClick={handleTheme}>Switch Themeaaa</button> */}
 
             <nav className="normal">
                 <Link to="/" className="link-nav">Home</Link>
                 <Link to="/aboutus" className="link-nav">About us</Link>
                 <Link to="/contact" className="link-nav">Contact</Link>
             </nav>
-
 
             <button handleOpenButton={handleOpenButton}>menu</button>
             <nav className="responsive">

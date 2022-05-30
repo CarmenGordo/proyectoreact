@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import Filters from "../../Components/Filters/filter";
 
 // Search
-import Search from "../../Components/Search/search";
+import CharactersFilter from "../../Components/Search/search"
 
 // Themes
 import {ThemeProvider} from "styled-components";
@@ -29,7 +29,7 @@ const Home = () => {
         characters,
         info,
         // buscador
-        handleCharacterSearch,
+        handleCharacterFilter,
         // paginacion
         handleNextCharacters,
         handlePrevCharacters
@@ -70,7 +70,7 @@ const Home = () => {
 
             </Filters>
 
-            <Search handleCharacterSearch={handleCharacterSearch} />
+            <CharactersFilter handleCharacterFilter={handleCharacterFilter} />
 
 
 
@@ -78,7 +78,6 @@ const Home = () => {
                 
                 <CardsList>
                     {characters.map(character => (
-                        // <Link to={`../CharacterPage/CharacterPageDetails/${character.id}`}>
                             <Cards
                             id={character.id}
                             src={character.image}
@@ -86,13 +85,15 @@ const Home = () => {
                             status={character.status}
                             origin={character.origin.name}
                         />
-                        // </Link>
                         
                     ))}
                 </CardsList>
             </Section>
-            {info?.next && <button onClick={handleNextCharacters}>Next</button>}
-            {info?.prev && <button onClick={handlePrevCharacters}>Prev</button>}
+
+
+            {/* paginacion : */}
+            {/* {info?.next && <button onClick={handleNextCharacters}>Next</button>}
+            {info?.prev && <button onClick={handlePrevCharacters}>Prev</button>} */}
 
             
         </HomeContainer>
