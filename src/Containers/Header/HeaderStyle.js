@@ -21,12 +21,12 @@ const HeaderContainer = styled.header`
         font-size: 26px;
         color: #fff;
         text-decoration: none;
-        margin-left: 15px;
+        margin-left: 30px;
 
         &:hover{
             font-weight: 500;
             color: #13ADC4;
-            // text-decoration: underline #13ADC4;
+            text-decoration: underline #13ADC4;
         }
     }
 

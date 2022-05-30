@@ -12,6 +12,8 @@ import CardsList from "../../Containers/CardsList/CardsList";
 // Filters
 import Filters from "../../Components/Filters/filter";
 
+// Search
+import Search from "../../Components/Search/search";
 
 // Themes
 import {ThemeProvider} from "styled-components";
@@ -24,6 +26,9 @@ const Home = () => {
         principalCharacters,
         characters,
         info,
+        // buscador
+        handleCharacterSearch,
+        // paginacion
         handleNextCharacters,
         handlePrevCharacters
     } = useCharacter()
@@ -37,21 +42,6 @@ const Home = () => {
     // filtros
     let [gender, updateGender] = useState("");
     let [species, updateSpecies] = useState("");
-
-
-
-
-    // buscador para que x defecto sea nullo y no pille na
-    const searchFilter = useRef(null);
-    // estado para buscador y actualizador listado character
-    const [characterList, setCharacterList] = useState([]);
-    const [searchCharacter, setSearchCharacter] = useState([]);
-
-    const handleSearch = () => {
-        const searchedValue = searchFilter.current.value.toLowerCase();
-        const filteredCharacter = characterList.filter(character => character.name.toLowerCase().includes(searchedValue));
-        setCharacterList(filteredCharacter);
-    }
 
 
     return(
@@ -78,15 +68,8 @@ const Home = () => {
 
             </Filters>
 
+            <Search handleCharacterSearch={handleCharacterSearch} />
 
-            <div className="search">
-                <input 
-                    ref={searchFilter} 
-                    type="text" 
-                    placeholder="Character finder"
-                    onChange={(e) => handleSearch(e)}
-                />
-            </div>
 
 
             <Section>
@@ -94,9 +77,11 @@ const Home = () => {
                 <CardsList>
                     {characters.map(character => (
                         <Cards
+                            id={character.id}
                             src={character.image}
                             name={character.name}
                             status={character.status}
+                            origin={character.origin.name}
                         />
                     ))}
                 </CardsList>

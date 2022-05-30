@@ -1,5 +1,5 @@
 export const lightTheme = {
-    body: 'green',
+    body: 'white',
     text: '#363537',
     text_hover: 'yellow'
 }
