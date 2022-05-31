@@ -36,10 +36,15 @@ const CardsContainer = styled.div`
         margin-top: -5px;
 
         h3{
-            font-family: 'Shlop';
+            // font-family: 'Shlop';
+            font-family: 'Bangers', cursive;
             font-size: 30px;
             color: black;
         }
+    }
+
+    a{
+        text-decoration: none !important;
     }
 
     // comprobacion de estatus

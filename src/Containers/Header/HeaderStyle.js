@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.header`
 
-    font-family: 'Radio Canada';
+    // font-family: 'Radio Canada';
+    font-family: 'Source Sans Pro', sans-serif;
     height: 90px;
     max-height: 92px;
     padding: 5px 45px;

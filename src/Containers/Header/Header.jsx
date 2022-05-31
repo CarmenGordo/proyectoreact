@@ -37,7 +37,7 @@ const {
             
             <Logo />
 
-            <CharactersFilter handleCharacterFilter={handleCharacterFilter} />
+            {/* <CharactersFilter handleChange={(e) => {handleChange(e)}} /> */}
 
 
             <nav className="normal">

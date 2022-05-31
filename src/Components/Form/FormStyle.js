@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const FormContainer = styled.form`
 
-    font-family: 'Radio Canada';
+font-family: 'Source Sans Pro', sans-serif  !important;
+    // font-family: 'Radio Canada';
     display: flex;
     justify-content: center;
     align-items: center;

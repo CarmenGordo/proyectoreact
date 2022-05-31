@@ -21,6 +21,17 @@ const Home = () => {
         // handlePrevCharacters
     } = useCharacter()
 
+    // buscador
+    const searchBar = useRef(null);
+    const [searchedCharacter, setSearchedCharacter] = useState([]);
+    const handleSearch = () => {
+        const searchedValue = searchBar.current.value.toLowerCase();
+        const filteredCharacter = characters.filter(character => character.name.toLowerCase().includes(searchedValue));
+        setSearchedCharacter(filteredCharacter);
+    }
+
+
+
     // console.log('principalCharacters', principalCharacters)
 
     // filtros
@@ -41,7 +52,8 @@ const Home = () => {
             } */}
             {/* final pag Cursorpage */}
 
-            <Header />
+            <Header reference={searchBar}
+            handleChange={(e) => handleSearch(e)}/>
 
             <Section>
                 

@@ -4,7 +4,8 @@ export const CharacterDetailsContainer = styled.div`
 
     .name_character{
         text-align: center;
-        font-family: 'Shlop';
+        // font-family: 'Shlop';
+        font-family: 'Rubik Glitch', cursive;
         font-size: 40px;
         color: #13ADC4;
 

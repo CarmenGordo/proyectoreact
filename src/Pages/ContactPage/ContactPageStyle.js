@@ -8,7 +8,8 @@ const ContactPageContainer = styled.section`
 
     .h1_text_cabecera{
         width: 100%;
-        font-family: 'Get Schwifty';
+        // font-family: 'Get Schwifty';
+        font-family: 'Rubik Glitch', cursive;
         font-size: 40px;
         font-weight: bold;
         color: #13ADC4;
