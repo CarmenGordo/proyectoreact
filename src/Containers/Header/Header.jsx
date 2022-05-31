@@ -4,25 +4,32 @@ import { Link } from "react-router-dom";
 import HeaderContainer from "./HeaderStyle";
 // asset img
 import Logo from '../../Components/Logo/Logo';
-import {ThemeContext} from '../../Context/ThemeContext';
-import { darkTheme, lightTheme } from "../../Themes/themes";
+
+// buscador
+import CharactersFilter from "../../Components/Search/Search";
+import useCharacter from "../../Services/characters-service";
 
 const Header = () =>{
     
    // const para modificar themes
-   const [theme, setTheme] = useState('light');
+//    const [theme, setTheme] = useState('light');
 
-   const handleTheme = () => {
-       localStorage.setItem("name", JSON.stringify(theme === 'light' ? JSON.stringify(darkTheme) : JSON.stringify(lightTheme)))
-       theme === 'light' ? setTheme('dark') : setTheme('light')
-   }
+//    const handleTheme = () => {
+//        localStorage.setItem("name", JSON.stringify(theme === 'light' ? JSON.stringify(darkTheme) : JSON.stringify(lightTheme)))
+//        theme === 'light' ? setTheme('dark') : setTheme('light')
+//    }
 
 //    boton responsive
-   const [openResponsive, setOpenResponsive] = useState(false)
+//    const [openResponsive, setOpenResponsive] = useState(false)
 
-   const handleOpenButton = () =>{
-    setOpenResponsive(!openResponsive)
-   }
+//    const handleOpenButton = () =>{
+//     setOpenResponsive(!openResponsive)
+//    }
+
+const {
+    // buscador
+    handleCharacterFilter,
+} = useCharacter()
 
 
     return(
@@ -30,8 +37,8 @@ const Header = () =>{
             
             <Logo />
 
-            {/* button theme */}
-            {/* <button onClick={handleTheme}>Switch Themeaaa</button> */}
+            <CharactersFilter handleCharacterFilter={handleCharacterFilter} />
+
 
             <nav className="normal">
                 <Link to="/" className="link-nav">Home</Link>
@@ -39,10 +46,10 @@ const Header = () =>{
                 <Link to="/contact" className="link-nav">Contact</Link>
             </nav>
 
-            <button handleOpenButton={handleOpenButton}>menu</button>
+            {/* <button handleOpenButton={handleOpenButton}>menu</button>
             <nav className="responsive">
 
-            </nav>
+            </nav> */}
 
         </HeaderContainer>
 

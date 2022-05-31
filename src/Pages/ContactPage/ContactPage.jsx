@@ -3,6 +3,7 @@ import ContactPageContainer from "./ContactPageStyle";
 import Header from "../../Containers/Header/Header";
 import H1 from "../../Components/Text/Headings/H1/H1";
 import Form from "../../Components/Form/Form";
+import { Footer } from "../../Containers/Footer/Footer";
 
 const ContactPage = () => {
     return(
@@ -16,8 +17,12 @@ const ContactPage = () => {
                 />
 
                 <Form />
+
+                <Footer/>
                     
             </ContactPageContainer>
+
+            
         </>
         
     )

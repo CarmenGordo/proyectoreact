@@ -58,15 +58,16 @@ const FormContainer = styled.form`
     }
 
     .submit{
-        /* background-image: url(${require(`../../Assets/Images/logo.png`)});
-        background-size: cover;
-        background-position-y: 10px; */
         background-color: #13ADC4;
         font-family: 'Radio Canada';
         width: 80px;
         height: 60px;
         color: white;
         border:none;
+        
+        &:hover{
+            filter: drop-shadow(0 0 15px #13ADC4);
+        }
 
         &:focus{
             filter: none;

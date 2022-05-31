@@ -8,49 +8,27 @@ import CursorPage from "../CursorPage/CursorPage";
 import Section from "../../Containers/Section/Section";
 import useCharacter from "../../Services/characters-service";
 import CardsList from "../../Containers/CardsList/CardsList";
-
-import { Link } from "react-router-dom";
-
-// Filters
-import Filters from "../../Components/Filters/filter";
-
-// Search
-import CharactersFilter from "../../Components/Search/search"
-
-// Themes
-import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "../../Themes/globalStyleThemes";
-import { lightTheme, darkTheme } from "../../Themes/themes";
+import { Footer } from "../../Containers/Footer/Footer";
 
 
 const Home = () => {
     const {
-        principalCharacters,
+        // principalCharacters,
         characters,
         info,
-        // buscador
-        handleCharacterFilter,
         // paginacion
-        handleNextCharacters,
-        handlePrevCharacters
+        // handleNextCharacters,
+        // handlePrevCharacters
     } = useCharacter()
 
-    console.log('principalCharacters', principalCharacters)
-
-    // const para modificar themes
-   const [theme, setTheme] = useState('light');
-
+    // console.log('principalCharacters', principalCharacters)
 
     // filtros
-    let [gender, updateGender] = useState("");
-    let [species, updateSpecies] = useState("");
+    // let [gender, updateGender] = useState("");
+    // let [species, updateSpecies] = useState("");
 
 
-    return(
-        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <>
-      <GlobalStyles/>
-      
+    return(      
       <HomeContainer>
             {/* para que salga antes la pag de Cursorpage */}
             {/* {
@@ -64,15 +42,6 @@ const Home = () => {
             {/* final pag Cursorpage */}
 
             <Header />
-        
-
-            <Filters>
-
-            </Filters>
-
-            <CharactersFilter handleCharacterFilter={handleCharacterFilter} />
-
-
 
             <Section>
                 
@@ -95,12 +64,10 @@ const Home = () => {
             {/* {info?.next && <button onClick={handleNextCharacters}>Next</button>}
             {info?.prev && <button onClick={handlePrevCharacters}>Prev</button>} */}
 
+            <Footer />
             
         </HomeContainer>
-      </>
-    </ThemeProvider>
-        
-        
+     
     )
 }
 

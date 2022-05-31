@@ -4,6 +4,7 @@ const AboutUsContainer = styled.section`
 
     font-family: 'Radio Canada';
     text-align: center;
+    margin-bottom: 50px ;
 
     .h1_text_cabecera{
         width: 100%;
@@ -16,6 +17,24 @@ const AboutUsContainer = styled.section`
         padding: 30px 0;
         text-align: center;
         margin: 0;
+    }
+
+    div{
+        text-align: end;
+        margin-bottom: 30px;
+
+        .switch{
+            margin-top: 10px;
+            min-height: 30px;
+            background-color: #13ADC4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover{
+                filter: drop-shadow(0 0 15px #13ADC4);
+            }
+        }
     }
 
     .p_text{

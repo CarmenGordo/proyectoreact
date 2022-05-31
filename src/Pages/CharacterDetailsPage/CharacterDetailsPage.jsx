@@ -4,6 +4,7 @@ import useCharacter from "../../Services/characters-service";
 
 // components
 import Header from "../../Containers/Header/Header";
+import { Footer } from "../../Containers/Footer/Footer";
 
 import { CharacterDetailsContainer } from "./CharacterDetailsPageStyle";
 
@@ -56,6 +57,8 @@ const CharacterDetailsPage = () =>{
                 </div>
             </div>
         </CharacterDetailsContainer>
+
+        <Footer/>
 
     </>    
     )
