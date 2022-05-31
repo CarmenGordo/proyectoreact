@@ -1,29 +1,7 @@
-import React, {useState} from "react";
-import H1 from "../../Components/Text/Headings/H1/H1";
-import Header from "../../Containers/Header/Header";
-import AboutUsContainer from "./AboutUsPageStyle";
-
-// Themes
-import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "../../Themes/globalStyleThemes";
-import { lightTheme, darkTheme } from "../../Themes/themes";
-
-const AboutUsPage = () =>{
-
-    // const para modificar themes
-    const [theme, setTheme] = useState('light');
-    const handleTheme = () => {
-        theme === 'light' ? setTheme('dark') : setTheme('light')
-    }
-
-    return(
-        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <>
-            <GlobalStyles/>
+<>
             <Header />
-            <button onClick={handleTheme}>Switch Theme</button>
 
-            <AboutUsContainer className="AboutUsContainer">
+            <AboutUsContainer>
 
                 <H1
                     className={"h1_text_cabecera"}
@@ -38,10 +16,3 @@ const AboutUsPage = () =>{
                 
         
             </AboutUsContainer>
-
-        </>
-        </ThemeProvider>
-    )
-}
-
-export default AboutUsPage;

@@ -1,7 +1,10 @@
 export const lightTheme = {
-    background: 'white',
+    body: 'green',
+    text: '#363537',
+    text_hover: 'yellow'
 }
-
 export const darkTheme = {
-    background: 'black',
+    body: 'purple',
+    text: '#FAFAFA',
+    text_hover: 'red'
 }

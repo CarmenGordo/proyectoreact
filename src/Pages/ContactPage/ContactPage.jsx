@@ -3,13 +3,12 @@ import ContactPageContainer from "./ContactPageStyle";
 import Header from "../../Containers/Header/Header";
 import H1 from "../../Components/Text/Headings/H1/H1";
 import Form from "../../Components/Form/Form";
-import { Footer } from "../../Containers/Footer/Footer";
 
 const ContactPage = () => {
     return(
         <>
             <Header />
-            <ContactPageContainer>
+            <ContactPageContainer >
 
                 <H1
                     className={"h1_text_cabecera"}
@@ -17,12 +16,8 @@ const ContactPage = () => {
                 />
 
                 <Form />
-
-                <Footer/>
                     
             </ContactPageContainer>
-
-            
         </>
         
     )

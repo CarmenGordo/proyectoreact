@@ -4,56 +4,58 @@ import { Link } from "react-router-dom";
 import HeaderContainer from "./HeaderStyle";
 // asset img
 import Logo from '../../Components/Logo/Logo';
+import {ThemeContext} from '../../Context/ThemeContext';
+import SwitchButton from "../../Components/SwitchButton/SwitchButton";
+import { darkTheme, lightTheme } from "../../Themes/themes";
 
-// buscador
-import CharactersFilter from "../../Components/Search/Search";
-import useCharacter from "../../Services/characters-service";
+const Header = () =>{
+  
+   const [theme, setTheme] = useState('light');
+   
 
-const Header = (handleChange) =>{
-    
-   // const para modificar themes
-//    const [theme, setTheme] = useState('light');
+   const handleTheme = () => {
+       changeTheme(theme);
+       theme === 'light' ? setTheme('dark') : setTheme('light')
+   }
 
-//    const handleTheme = () => {
-//        localStorage.setItem("name", JSON.stringify(theme === 'light' ? JSON.stringify(darkTheme) : JSON.stringify(lightTheme)))
-//        theme === 'light' ? setTheme('dark') : setTheme('light')
-//    }
+   const changeTheme = (theme) =>{
+    if(theme === 'dark'){
+        localStorage.setItem('body', darkTheme.body);
+        localStorage.setItem('text', darkTheme.text);
+        localStorage.setItem('text_hover', darkTheme.text_hover);
 
-//    boton responsive
-//    const [openResponsive, setOpenResponsive] = useState(false)
+    }else if(theme === 'light'){
+        localStorage.setItem('body', lightTheme.body);
+        localStorage.setItem('text', lightTheme.text);
+        localStorage.setItem('text_hover', lightTheme.text_hover);
+    }
+ 
+    }
 
-//    const handleOpenButton = () =>{
-//     setOpenResponsive(!openResponsive)
-//    }
-
-const {
-    // buscador
-    handleCharacterFilter,
-} = useCharacter()
-
+    if(theme){
+        changeTheme(theme);
+    }
 
     return(
         <HeaderContainer>
             
             <Logo />
 
-            <CharactersFilter onChange={(e) => {handleChange(e)}} />
-            {/* onChange={handleChange}  */}
+            {/* button theme */}
+            {/* <SwitchButton></SwitchButton> */}
+
+            <button onClick={handleTheme}>Switch Themeaaa</button>
 
 
-            <nav className="normal">
+            <nav>
+            
                 <Link to="/" className="link-nav">Home</Link>
+                <Link to="/character" className="link-nav">Character</Link>
                 <Link to="/aboutus" className="link-nav">About us</Link>
                 <Link to="/contact" className="link-nav">Contact</Link>
             </nav>
 
-            {/* <button handleOpenButton={handleOpenButton}>menu</button>
-            <nav className="responsive">
-
-            </nav> */}
-
         </HeaderContainer>
-
     )
 }
 

@@ -1,26 +1,18 @@
 import styled from "styled-components";
 
 const FormContainer = styled.form`
-
-font-family: 'Source Sans Pro', sans-serif  !important;
-    // font-family: 'Radio Canada';
+  
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-item: center;
     flex-flow: row wrap;
     padding-top: 26px;
-    
 
     div{
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-item: center;
         flex-flow: column wrap;
-    }
-
-    label{
-        font-size: 22px;
-        color: white;
     }
 
     input{
@@ -35,7 +27,7 @@ font-family: 'Source Sans Pro', sans-serif  !important;
 
     textarea{
         width: 550px;
-        min-height: 100px;
+        min-height: 60px;
         border: none;
         border-radius: 5px;
         background-color: #C4C4C4;
@@ -44,57 +36,20 @@ font-family: 'Source Sans Pro', sans-serif  !important;
     }
 
     input::placeholder, textarea::placeholder{
-        font-family: 'Radio Canada';
         color: white;
-        padding-left: 10px;
-    }
-    textarea::placeholder{
-        padding-top: 15px;
     }
 
-    input:focus, textarea:focus{
-        font-family: 'Radio Canada';
-        border: none;
-        filter: drop-shadow(0 0 8px #13ADC4);
-    }
 
     .submit{
-        background-color: #13ADC4;
-        font-family: 'Radio Canada';
-        width: 80px;
-        height: 60px;
+        width: 100px;
+        height: 80px;
+        background-image: url(../../Assets/Images/logo.png);
+        // background-image: url("../../../Assets/Images/logo.png");
+        // background-color: red;
         color: white;
         border:none;
         
-        &:hover{
-            filter: drop-shadow(0 0 15px #13ADC4);
-        }
-
-        &:focus{
-            filter: none;
-        }
     }
-
-    @media screen and (max-width: 900px) {
-        input, textarea{
-            width: 450px;
-        }
-       
-    }
-
-    @media screen and (max-width: 500px) {
-        /* text-align: center; */
-        input, textarea{
-            width: 400px;
-        }
-    }
-
-    @media screen and (max-width: 375px) {
-        input, textarea{
-            width: 300px;
-        }
-    }
-
 
 `;
 

@@ -10,7 +10,6 @@ import reportWebVitals from './reportWebVitals';
 // pages
 import CursorPage from './Pages/CursorPage/CursorPage';
 import Home from './Pages/Home/index';
-import CharacterDetailsPage from './Pages/CharacterDetailsPage/CharacterDetailsPage';
 import AboutUsPage from './Pages/AboutUsPage/AboutUsPage';
 import ContactPage from './Pages/ContactPage/ContactPage';
 
@@ -22,7 +21,6 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/cursor' element={<CursorPage />} />
-        <Route path='/:name' element={<CharacterDetailsPage />} />
         <Route path='/aboutus' element={<AboutUsPage />} /> 
         <Route path='/contact' element={<ContactPage/>} />
       </Routes>

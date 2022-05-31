@@ -8,38 +8,57 @@ import CursorPage from "../CursorPage/CursorPage";
 import Section from "../../Containers/Section/Section";
 import useCharacter from "../../Services/characters-service";
 import CardsList from "../../Containers/CardsList/CardsList";
-import { Footer } from "../../Containers/Footer/Footer";
+
+// Filters
+import Filters from "../../Components/Filters/filter";
+
+
+// Themes
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "../../Themes/globalStyleThemes";
+import { lightTheme, darkTheme } from "../../Themes/themes";
 
 
 const Home = () => {
     const {
-        // principalCharacters,
+        principalCharacters,
         characters,
         info,
-        // paginacion
-        // handleNextCharacters,
-        // handlePrevCharacters
+        handleNextCharacters,
+        handlePrevCharacters
     } = useCharacter()
 
-    // buscador
-    const searchBar = useRef(null);
-    const [searchedCharacter, setSearchedCharacter] = useState([]);
+    console.log('principalCharacters', principalCharacters)
+
+    // const para modificar themes
+   const [theme, setTheme] = useState('light');
+
+
+    // filtros
+    let [gender, updateGender] = useState("");
+    let [species, updateSpecies] = useState("");
+
+
+
+
+    // buscador para que x defecto sea nullo y no pille na
+    const searchFilter = useRef(null);
+    // estado para buscador y actualizador listado character
+    const [characterList, setCharacterList] = useState([]);
+    const [searchCharacter, setSearchCharacter] = useState([]);
+
     const handleSearch = () => {
-        const searchedValue = searchBar.current.value.toLowerCase();
-        const filteredCharacter = characters.filter(character => character.name.toLowerCase().includes(searchedValue));
-        setSearchedCharacter(filteredCharacter);
+        const searchedValue = searchFilter.current.value.toLowerCase();
+        const filteredCharacter = characterList.filter(character => character.name.toLowerCase().includes(searchedValue));
+        setCharacterList(filteredCharacter);
     }
 
 
-
-    // console.log('principalCharacters', principalCharacters)
-
-    // filtros
-    // let [gender, updateGender] = useState("");
-    // let [species, updateSpecies] = useState("");
-
-
-    return(      
+    return(
+        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <>
+      <GlobalStyles/>
+      
       <HomeContainer>
             {/* para que salga antes la pag de Cursorpage */}
             {/* {
@@ -52,34 +71,46 @@ const Home = () => {
             } */}
             {/* final pag Cursorpage */}
 
-            <Header reference={searchBar}
-            handleChange={(e) => handleSearch(e)}/>
+            <Header>
+
+            </Header>
+        
+
+            <Filters>
+
+            </Filters>
+
+
+            <div className="search">
+                <input 
+                    ref={searchFilter} 
+                    type="text" 
+                    placeholder="Character finder"
+                    onChange={(e) => handleSearch(e)}
+                />
+            </div>
+
 
             <Section>
-                
+                {/* Crear componente CardsList y Cards */}
                 <CardsList>
                     {characters.map(character => (
-                            <Cards
-                            id={character.id}
+                        <Cards
                             src={character.image}
                             name={character.name}
-                            status={character.status}
-                            origin={character.origin.name}
                         />
-                        
                     ))}
                 </CardsList>
             </Section>
+            {info?.next && <button onClick={handleNextCharacters}>Next</button>}
+            {info?.prev && <button onClick={handlePrevCharacters}>Prev</button>}
 
-
-            {/* paginacion : */}
-            {/* {info?.next && <button onClick={handleNextCharacters}>Next</button>}
-            {info?.prev && <button onClick={handlePrevCharacters}>Prev</button>} */}
-
-            <Footer />
             
         </HomeContainer>
-     
+      </>
+    </ThemeProvider>
+        
+        
     )
 }
 

@@ -1,88 +1,62 @@
 import styled from "styled-components";
 
-const CardsContainer = styled.div`
+const CardsContainer = styled.div `
+    body{
+        background-color: red;
+    }
+
+    background-color: ${localStorage.getItem('body')};
     width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-    margin: 30px 30px;
+    margin: 50px 15px;
     border-radius: 10px;
     text-align: center;
 
-    .container_card{
-        padding: 10px;
-        background-color: white;
-        border-radius: 10px;
-    }
+
+    // props que cambia con tema
+    // comprobar stado de status para poner el color del borde
+    // border: solid 3px #13ADC4;
+    // padding: 8px;
+    // filter: drop-shadow(0px 4px 4px rgba(19, 173, 196, 0.5)) drop-shadow(0px -4px 10px rgba(19, 173, 196, 0.5));
+
+
 
     .img_character{
-        width: 100%;
-        height: 250px;
-        border-radius: 10px 10px 0 0;
+        widht: 100%;
+        max-height: 174px;
+        background-color: green;
     }
 
-    .name_character{
+    .info_character{
         background-color: #C4C4C4;
         width: 250px;
-        height: 90px;
-        max-height: 100px;
-        border-radius: 0 0 10px 10px;
+        max-height: 500px;
+        border-radius: 0 0 5px 5px;
         text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-flow: row wrap;
-        margin-top: -5px;
-
-        h3{
-            // font-family: 'Shlop';
-            font-family: 'Bangers', cursive;
-            font-size: 30px;
-            color: black;
-        }
     }
 
-    a{
-        text-decoration: none !important;
-    }
+    li{
+        text-align: center;
+        color: black;
+        font-size: 24px;
 
-    // comprobacion de estatus
-    .principal{
-        border-radius: 10px;
-        border: solid 2px #13ADC4;
-        
-        &:hover{
-            filter: drop-shadow(0 0 15px #13ADC4);
-        }
+        // comprobacion de estatus
+       .
     }
-
     .dead{
-       border-radius: 10px;
-       border: solid 2px #E4425A;
-       
-       &:hover{
-           filter: drop-shadow(0 0 15px #E4425A);
-       }
+        color: red
     }
-
     .alive{
-       border-radius: 10px;
-       border: solid 2px #81D145;
-
-       &:hover{
-           filter: drop-shadow(0 0 15px #81D145);
-       }
+        color: blue
     }
-
     .missing{
-       border-radius: 10px;
-       border: solid 2px #F8F641;
-
-       &:hover{
-           filter: drop-shadow(0 0 15px #F8F641);
-       }
+        color: yellow
     }
+
+    
 
 `;
 
