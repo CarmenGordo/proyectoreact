@@ -9,7 +9,7 @@ import Logo from '../../Components/Logo/Logo';
 import CharactersFilter from "../../Components/Search/Search";
 import useCharacter from "../../Services/characters-service";
 
-const Header = () =>{
+const Header = (handleChange) =>{
     
    // const para modificar themes
 //    const [theme, setTheme] = useState('light');
@@ -37,7 +37,8 @@ const {
             
             <Logo />
 
-            {/* <CharactersFilter handleChange={(e) => {handleChange(e)}} /> */}
+            <CharactersFilter onChange={(e) => {handleChange(e)}} />
+            {/* onChange={handleChange}  */}
 
 
             <nav className="normal">

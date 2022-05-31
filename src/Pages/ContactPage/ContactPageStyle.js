@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ContactPageContainer = styled.section`
     text-align : center;
     background-image: url(${require(`../../Assets/Images/fondo-1.jpg`)});
-    background-size: cover;  
+    background-size: contain;  
     background-position-y: 50px;
 
     .h1_text_cabecera{
